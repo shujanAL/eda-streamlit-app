@@ -18,6 +18,8 @@ pip install -r requirements.txt
 streamlit run streamlit_app.py
 ```
 
+Python 3.11 through 3.14 is supported by the pinned dependency ranges.
+
 ## Usage
 1. Upload a CSV dataset.
 2. Explore data quality and statistics.
@@ -33,10 +35,16 @@ streamlit run streamlit_app.py
 - sample_data.csv
 
 ## Testing
-Test valid, empty, malformed, and oversized CSV files.
-Verify charts, cleaning options, and downloads.
+
+```bash
+pip install -r requirements-dev.txt
+pytest
+```
+
+The automated suite covers valid and invalid CSV uploads, size and extension
+validation, duplicate/missing-row cleaning, UTF-8 CSV downloads, and app startup.
 
 ## Deployment
 Streamlit Community Cloud
 
-Live URL: Not deployed yet.
+Live URL: https://shujan-eda-explorer.streamlit.app
