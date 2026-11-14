@@ -88,6 +88,16 @@ else:
 
         st.dataframe(missing_summary)
 
+        # Unique values summary
+        st.subheader("Unique Values by Column")
+
+        unique_summary = pd.DataFrame({
+            "Column": df.columns,
+            "Unique Values": df.nunique(dropna=True).values
+        })
+
+        st.dataframe(unique_summary)
+
         # Numerical analysis
         st.subheader("Numerical Summary")
 
