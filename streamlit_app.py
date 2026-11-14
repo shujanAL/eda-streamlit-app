@@ -20,6 +20,11 @@ if uploaded_file is None:
     st.info("Please upload a CSV file to get started.")
 else:
     try:
+        # Validate CSV file extension
+        if not uploaded_file.name.lower().endswith(".csv"):
+            st.error("Please upload a file with a .csv extension.")
+            st.stop()
+
         max_file_size = 10 * 1024 * 1024
 
         if uploaded_file.size > max_file_size:
